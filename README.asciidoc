@@ -1,0 +1,26 @@
+= Chumbok SDLC
+
+This repo describes how to create Jenkins job automatically using Groovy DSL.
+
+
+=== Prerequisites
+
+1. Install Jenkins.
+2. Install Job DSL plugin.
+
+
+=== Create JobBuilder Project
+
+1. Add a *Freestyle* project.
+2. In *Source Code Management* section, add the current repo.
+3. In the *Build* action, select *Process Job DSLs* from *Add build step* dropdown.
+4. Select *Look on Filesystem* and add *JobBuilder.groovy* in *DSL scripts*.
+5. Save the project.
+
+
+=== Build JobBuilder Job
+
+- Running this job will trigger *JobBuilder.groovy* file.
+- JobBuilder script lookup for project descriptor YAML files in *jobs* directory.
+- Project descriptor YAML file contains metadata for a job.
+- Once success, you should able to see jobs in Jenkins.
