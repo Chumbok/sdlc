@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  jenkins:
+    build: files/jenkins
+    environment:
+      - JENKINS_HOME=/var/jenkins_home
+    ports:
+      - "32768:8080"
+      - "32769:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+
+volumes:
+  jenkins_data:
+    driver: local
