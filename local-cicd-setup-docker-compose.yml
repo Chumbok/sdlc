@@ -1,15 +1,19 @@
-version: '3.1'
+version: '3.2'
 
 services:
   jenkins:
     build: files/jenkins
+    privileged: true
+    user: root
     environment:
       - JENKINS_HOME=/var/jenkins_home
     ports:
       - "32768:8080"
       - "32769:50000"
     volumes:
-      - jenkins_data:/var/jenkins_home
+      - /tmp/jenkins:/var/jenkins_home
+      # - jenkins_data:/var/jenkins_home
+    container_name: jenkins
 
 volumes:
   jenkins_data:
