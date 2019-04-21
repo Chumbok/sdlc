@@ -9,6 +9,12 @@ This repo describes how to create Jenkins job automatically using Groovy DSL.
 2. Install Job DSL plugin.
 
 
+=== How to build Jenkins Docker Image
+```
+docker-compose -f local-cicd-setup-docker-compose.yml up --build
+```
+
+
 === Create JobBuilder Project
 
 1. Add a *Freestyle* project.
