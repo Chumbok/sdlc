@@ -1,7 +1,7 @@
 #!groovy
-
-import jenkins.model.*
-import hudson.security.*
+import hudson.security.FullControlOnceLoggedInAuthorizationStrategy
+import hudson.security.HudsonPrivateSecurityRealm
+import jenkins.model.Jenkins
 import jenkins.security.s2m.AdminWhitelistRule
 
 def instance = Jenkins.getInstance()

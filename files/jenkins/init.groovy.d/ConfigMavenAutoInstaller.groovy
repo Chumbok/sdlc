@@ -1,10 +1,9 @@
 #!groovy
-
-import hudson.tasks.Maven.MavenInstallation;
-import hudson.tools.InstallSourceProperty;
-import hudson.tools.ToolProperty;
-import hudson.tools.ToolPropertyDescriptor;
-import hudson.util.DescribableList;
+import hudson.tasks.Maven.MavenInstallation
+import hudson.tools.InstallSourceProperty
+import hudson.tools.ToolProperty
+import hudson.tools.ToolPropertyDescriptor
+import hudson.util.DescribableList
 
 def mavenDesc = jenkins.model.Jenkins.instance.getExtensionList(hudson.tasks.Maven.DescriptorImpl.class)[0]
 
