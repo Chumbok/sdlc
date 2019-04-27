@@ -1,0 +1,12 @@
+
+jobDefinitions:
+
+  - name: production-ready-microservices-starter
+    jenkinsFolder: xyz
+    gitUrl: https://github.com/mmahmoodictbd/production-ready-microservices-starter
+    jobType: TEST
+
+  - name: OpenBlog
+    jenkinsFolder: xyz
+    gitUrl: https://github.com/mmahmoodictbd/OpenBlog
+    jobType: TEST
