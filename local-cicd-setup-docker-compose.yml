@@ -7,12 +7,14 @@ services:
     user: root
     environment:
       - JENKINS_HOME=/var/jenkins_home
+      - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins.yaml
     ports:
       - "32768:8080"
       - "32769:50000"
     volumes:
       - /tmp/jenkins:/var/jenkins_home
       # - jenkins_data:/var/jenkins_home
+      - ./files/jenkins/casc/jenkins.yaml:/var/jenkins_home/jenkins.yaml
     container_name: jenkins
 
 volumes:

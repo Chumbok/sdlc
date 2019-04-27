@@ -1,0 +1,13 @@
+jenkins:
+  systemMessage: "Welcome to Chumbok IT Jenkins."
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  numExecutors: 2
+  securityRealm:
+    local:
+      allowsSignup: false
+
+security:
+  globaljobdslsecurityconfiguration:
+    useScriptSecurity: false

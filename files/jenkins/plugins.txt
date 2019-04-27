@@ -1,3 +1,7 @@
+# Jenkins
+configuration-as-code
+configuration-as-code-support
+
 # Organization and Administration
 dashboard-view
 cloudbees-folder
