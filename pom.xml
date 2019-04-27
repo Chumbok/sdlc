@@ -11,6 +11,7 @@
 
     <properties>
         <groovyVersion>2.5.6</groovyVersion>
+        <jenkins-core.version>2.85</jenkins-core.version>
     </properties>
 
     <dependencies>
@@ -24,7 +25,26 @@
         <dependency>
             <groupId>org.jenkins-ci.main</groupId>
             <artifactId>jenkins-core</artifactId>
-            <version>2.85</version>
+            <version>${jenkins-core.version}</version>
+        </dependency>
+
+        <!-- Jenkins plugins -->
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>job-dsl</artifactId>
+            <version>1.73</version>
+        </dependency>
+
+        <!-- JobBuilder.groovy development dependencies -->
+        <dependency>
+            <groupId>org.apache.ivy</groupId>
+            <artifactId>ivy</artifactId>
+            <version>2.5.0-rc1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.17</version>
         </dependency>
 
     </dependencies>
@@ -100,5 +120,19 @@
 
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>https://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
 
 </project>
