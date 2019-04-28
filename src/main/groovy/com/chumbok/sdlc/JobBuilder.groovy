@@ -36,7 +36,7 @@ jobDefsYaml['jobDefinitions'].each { jobDef ->
 
     multibranchPipelineJob(jobDef.jenkinsFolder + "/" + jobDef.name + "-ci") {
 
-        description("On SCM: <a href=\"${jobDef.gitUrl}\">${jobDef.gitUrl}</a>")
+        description("On SCM: ${jobDef.gitUrl}")
 
         triggers {
             cron('H H * * *')
@@ -45,8 +45,9 @@ jobDefsYaml['jobDefinitions'].each { jobDef ->
         branchSources {
             github {
                 id("repo-${jobDef.name}")
-                repoOwner(jobDef.name)
+                repoOwner(jobDef.jenkinsFolder)
                 repository(jobDef.name)
+                scanCredentialsId('github-ci')
             }
         }
 
