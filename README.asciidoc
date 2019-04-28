@@ -5,28 +5,40 @@ This repo describes how to create Jenkins job automatically using Groovy DSL.
 
 === Prerequisites
 
-1. Install Jenkins.
-2. Install Job DSL plugin.
+1. Install Docker and Docker Compose.
+2. Apache Maven
 
 
-=== How to build Jenkins Docker Image
+=== How to run
+
 ```
+# How to build Jenkins Docker Image
+docker-compose -f local-cicd-setup-docker-compose.yml build
+# How to build Jenkins Docker Image and run
 docker-compose -f local-cicd-setup-docker-compose.yml up --build
+# Or just run docker compose
+docker-compose -f local-cicd-setup-docker-compose.yml up
 ```
 
 
-=== Create JobBuilder Project
+=== What JobBuilder Job does
 
-1. Add a *Freestyle* project.
-2. In *Source Code Management* section, add the current repo.
-3. In the *Build* action, select *Process Job DSLs* from *Add build step* dropdown.
-4. Select *Look on Filesystem* and add *JobBuilder.groovy* in *DSL scripts*.
-5. Save the project.
-
-
-=== Build JobBuilder Job
-
-- Running this job will trigger *JobBuilder.groovy* file.
-- JobBuilder script lookup for project descriptor YAML files in *jobs* directory.
-- Project descriptor YAML file contains metadata for a job.
+- Running this job will trigger link:src/main/groovy/com/chumbok/sdlc/JobBuilder.groovy[JobBuilder.groovy].
+- JobBuilder.groovy scans project descriptor YAML link:src/main/resources/job-definition.yaml[file].
+- JobBuilder.groovy create pipelineJob that points to Jenkinsfile in git repository.
+- JobBuilder.groovy create multibranchPipelineJob for CI for provided git repository.
 - Once success, you should able to see jobs in Jenkins.
+
+
+=== What AutoJobBuilder Job does
+
+- Running this job will trigger link:src/main/groovy/com/chumbok/sdlc/AutoJobBuilder.groovy[AutoJobBuilder.groovy].
+- AutoJobBuilder.groovy scans Github user or org using API.
+- AutoJobBuilder.groovy create pipelineJob that points to Jenkinsfile in git repository.
+- AutoJobBuilder.groovy create multibranchPipelineJob for CI for provided git repository.
+- Once success, you should able to see jobs in Jenkins.
+
+
+=== How to use JobBuilder and AutoJobBuilder Job
+
+Just hit the *build* button.
