@@ -51,6 +51,12 @@ jobDefsYaml['jobDefinitions'].each { jobDef ->
             }
         }
 
+        factory {
+            workflowBranchProjectFactory {
+                scriptPath('Jenkinsfile')
+            }
+        }
+
         orphanedItemStrategy {
             discardOldItems {
                 daysToKeep(1)  // remove merged pipelines every day
