@@ -35,6 +35,12 @@
             <version>1.73</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jenkins-ci.plugins</groupId>
+            <artifactId>credentials</artifactId>
+            <version>2.1.18</version>
+        </dependency>
+
         <!-- JobBuilder.groovy development dependencies -->
         <dependency>
             <groupId>org.apache.ivy</groupId>
