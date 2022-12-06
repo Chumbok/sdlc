@@ -11,7 +11,7 @@
 
     <properties>
         <groovyVersion>2.5.6</groovyVersion>
-        <jenkins-core.version>2.85</jenkins-core.version>
+        <jenkins-core.version>2.356</jenkins-core.version>
     </properties>
 
     <dependencies>
